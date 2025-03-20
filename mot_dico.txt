@@ -1,20 +1,22 @@
-"Karen": femme perçue comme autoritaire, exigeante, souvent raciste.
-"Pick-me": "personne (souvent une fille) qui cherche désespérément à plaire, souvent en rabaissant les autres."
-"Incel": "personne frustrée par son absence de relations intimes, souvent avec une vision toxique des femmes."
-"Degen": "individu perçu comme dégénéré ou inadapté, souvent utilisé dans les communautés en ligne."
-"Edgelord": "personne qui cherche à provoquer ou choquer avec des opinions 'dark' ou extrêmes."
-"F-boy / F-girl": "personne perçue comme manipulatrice en matière de relations."
-"Sigma male": "version exagérée du 'loup solitaire' qui rejette les normes sociales masculines, souvent idéalisée de manière toxique."
-"DILF/MILF": "homme/femme mature perçu(e) comme sexuellement attirant(e)."
-"Based": "opinion considérée comme courageuse et sans filtre, mais parfois vue comme insensible."
-"Cuck": "utilisé pour dénigrer quelqu'un perçu comme soumis ou dominé (souvent connotation toxique)."
-"Neet": "personne sans emploi, éducation ou formation, souvent vue comme déconnectée de la société."
-"Gaslight": "manipuler pour faire douter quelqu'un de sa perception de la réalité."
-"Snowflake": "personne jugée comme trop sensible ou facilement offensée."
-"Karening": "comportement exigeant et intolérant, généralement attribué à une femme blanche d'âge moyen."
-"Soy boy": "homme perçu comme faible ou 'féminisé', souvent utilisé par des groupes misogynes."
-"Touch grass": "critique envers quelqu'un jugé comme trop ancré dans internet, détaché de la réalité."
-"Thirst trap": "contenu posté pour attirer l’attention sexuelle."
-"Goblin mode": "comportement décomplexé, négligé, parfois jugé répulsif."
-"Cancel": "boycott public d'une personne jugée problématique, souvent perçu comme excessif."
-"Karencore": "esthétique des 'Karens' : bob court, attitude autoritaire, opinion tranchée."
+Based: opinion considérée comme courageuse et sans filtre, mais parfois vue comme insensible.
+Cancel: boycott public d'une personne jugée problématique, souvent perçu comme excessif.
+Cuck: utilisé pour dénigrer quelqu'un perçu comme soumis ou dominé (souvent connotation toxique).
+DILF/MILF: homme/femme mature perçu(e) comme sexuellement attirant(e).
+Degen: individu perçu comme dégénéré ou inadapté, souvent utilisé dans les communautés en ligne.
+Edgelord: personne qui cherche à provoquer ou choquer avec des opinions 'dark' ou extrêmes.
+F-boy / F-girl: personne perçue comme manipulatrice en matière de relations.
+Gaslight: manipuler pour faire douter quelqu'un de sa perception de la réalité.
+Goblin mode: comportement décomplexé, négligé, parfois jugé répulsif.
+Incel: personne frustrée par son absence de relations intimes, souvent avec une vision toxique des femmes.
+Karen: femme perçue comme autoritaire, exigeante, souvent raciste.
+Karencore: esthétique des 'Karens' -> bob court, attitude autoritaire, opinion tranchée.
+Karening: comportement exigeant et intolérant, généralement attribué à une femme blanche d'âge moyen.
+Neet: personne sans emploi, éducation ou formation, souvent vue comme déconnectée de la société.
+Pick-me: personne (souvent une fille) qui cherche désespérément à plaire, souvent en rabaissant les autres.
+Sigma male: version exagérée du 'loup solitaire' qui rejette les normes sociales masculines, souvent idéalisée de manière toxique.
+Snowflake: personne jugée comme trop sensible ou facilement offensée.
+Soy boy: homme perçu comme faible ou 'féminisé', souvent utilisé par des groupes misogynes.
+T'as les crampté: Expression de la génération Z pour perturbé l'ennemi.
+Thirst trap: contenu posté pour attirer l’attention sexuelle.
+Touch grass: critique envers quelqu'un jugé comme trop ancré dans internet, détaché de la réalité.
+Wokism: Apparu en français en 2015, le mot wokisme désigne de manière péjorative un courant de pensée, une idéologie, qui se veut progressiste, qui lutte pour une certaine conception de la justice sociale, à travers la défense de diverses causes. Mais la réalité même de ce courant de pensée est discutable, tant le mot wokisme est employé à tout-va, à la manière d’un épouvantail, pour discréditer des adversaires supposés.
