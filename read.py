@@ -1,17 +1,16 @@
-import csv
+import json
 
 def display_all():
 
-    # Ouvrir le CSV
-    with open('mot_dico.csv', mode='r', newline='', encoding='utf-8') as file:
-        reader = csv.DictReader(file) #Lecture en colonnes
+    # Ouvrir le JSON
+    with open('mot_dico.json', mode='r', encoding='utf-8') as file:
+        data = json.load(file)
 
-        print(len(list(reader)), "mots trouvés dans le dictionnaire", "\n")
-        file.seek(0) # Retourner au début du fichier
+        print(len(data), "mots trouvés dans le dictionnaire", "\n")
 
-        # Lire chaque ligne
-        for row in reader:
-            print(f"{row['Term']} ->  Definition: {row['Definition']}")
-
+        # Lire et afficher chaque mot et sa définition
+        for term, definition in data.items():
+            print(f"{term} -> Definition: {definition}")
 
 display_all()
+
