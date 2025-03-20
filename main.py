@@ -1,5 +1,5 @@
 import os
-
+import json
 
 def suppression():
     sup_request = input("quel mots voulez vous suprimez du dictionnaire : ")
@@ -20,3 +20,4 @@ def suppression():
             
 
 suppression()
+
