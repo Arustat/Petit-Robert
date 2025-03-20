@@ -9,3 +9,4 @@ def ajouter_mot():
             return "Le mot existe déjà"
             ajouter_mot()
     description = input("Veuillez entrer une description : ")
+

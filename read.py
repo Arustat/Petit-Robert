@@ -1,5 +1,4 @@
 import json
-
 def display_all():
 
     # Ouvrir le JSON
