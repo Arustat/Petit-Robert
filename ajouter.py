@@ -2,7 +2,7 @@
 def ajouter_mot():
     print("Vous voulez ajouter un mot !")
     mot = input("Veuillez entrer votre mot : ")
-    f = open("mot_disco.json","r")
+    f = open("mot_disco.txt","r")
     contenu = f.read()
     for i in contenu:
         if i == mot:
