@@ -1,4 +1,4 @@
-import json
+import 
 def display_all():
 
     # Ouvrir le JSON
