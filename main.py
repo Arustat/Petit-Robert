@@ -4,6 +4,7 @@
 # Licence: GNU GPL v3
 # Fonction Ajouter un mot
 import os
+import re
 
 #Fonction principale
 def main():
@@ -37,19 +38,20 @@ def main():
 
 
 #Fonction Suppression d'un mot
+
+
 def suppression():
-    sup_request = input("quel mots voulez vous suprimez du dictionnaire : ")
-    x = list()
-    y = list()
-    with open("mot_dico.txt","r") as dico:
-        for line in dico:
-            if "#" in line:
-                # on saute la ligne 
-                continue
-            data=line.split(":")
-            x.append(data[0])
-    print(x)
-    print(y)             
+    sup_request = input("Quel mot voulez-vous supprimer du dictionnaire ? ")
+
+    with open("mot_dico.txt", "r") as file:
+        lines = file.readlines()
+
+    with open("mot_dico.txt", "w") as file:
+        for line in lines:
+            # Supprimer toute la ligne si le mot exact est présent
+            if not re.search(rf'\b{re.escape(sup_request)}\b', line):
+                file.write(line)
+
 
 def ajouter_mot():
     print("Vous voulez ajouter un mot !")
