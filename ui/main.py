@@ -46,3 +46,6 @@ exit_button = tk.Button(root, text="Exit", width=20, height=2)
 exit_button.place(x=230, y=550)
 
 root.mainloop()
+
+def main():
+    exit
