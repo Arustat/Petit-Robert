@@ -23,26 +23,28 @@ def main():
     print("".rjust(5) + "Affichage de tout le dictionnaire".ljust(40, "_") + "4")
     print("".rjust(5) + "Fin du programme".ljust(40, "_") + "0")
     print("." * 50)
-    choix = int(input("Quel est votre choix ? : "))
-    if (choix == 1):
+    choix = (input("Quel est votre choix ? : "))
+    if (choix == "1"):
         ajouter_mot()
-    elif(choix == 2):
+    elif(choix == "2"):
         suppression()
-    elif(choix == 3):
+    elif(choix == "3"):
         clear = os.system("cls" if os.name == "nt" else "clear")
         search_term(input("Quel mot voulez-vous rechercher ? : "))
         print("")
         main()
-    elif(choix == 4):
+    elif(choix == "4"):
         clear = os.system("cls" if os.name == "nt" else "clear")
         display_all()
         print("")
         main()
-    elif(choix == 0):
-        return "Merci d'avoir utilisé le Petit Robert de la nouvelle génération"
+    elif(choix == "0"):
+        print("Merci d'avoir utilisé le Petit Robert de la nouvelle génération\n0")
+        return
     else:
         print("Erreur de saisie !")
-        return main()
+        main()
+
 
 
 #Fonction Suppression d'un mot
