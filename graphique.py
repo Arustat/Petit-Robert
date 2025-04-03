@@ -1,6 +1,4 @@
 import matplotlib.pyplot as plt
-import plotly
-import plotly.graph_objs as go
 
 def graphique():
     nbMot = 0
@@ -10,6 +8,7 @@ def graphique():
             label = line.split(":")[0].strip()
             nbMot = len(line.split(":", 1)[1].strip().split())
             plt.bar(label, nbMot)
+            plt.xticks(rotation=70)
+    plt.ylabel("Nombre de mots dans la définition")
+    plt.title("Mots du dictionnaire")
     plt.show()
-
-graphique()
