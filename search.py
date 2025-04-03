@@ -21,3 +21,4 @@ def search_term(term):
 if __name__ == "__main__":
     mot = input("Entrez un mot à rechercher : ")
     search_term(mot)
+
