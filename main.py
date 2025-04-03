@@ -2,7 +2,7 @@
 # Auteur: Mayssa / Antonin / Raphael
 # Date: 07/10/2020
 # Licence: GNU GPL v3
-# Fonction Ajouter un mot
+
 import os
 import re
 from search import search_term
