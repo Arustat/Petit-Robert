@@ -5,6 +5,7 @@
 
 import os
 import re
+from modification import modification
 from search import search_term
 from read import display_all
 
@@ -22,6 +23,7 @@ def main():
     print("".rjust(5) + "Rechercher un mot".ljust(40, "_") + "3")
     print("".rjust(5) + "Affichage de tout le dictionnaire".ljust(40, "_") + "4")
     print("".rjust(5) + "Fin du programme".ljust(40, "_") + "0")
+    print("".rjust(5) + "Modifier un mot".ljust(40, "_") + "5")
     print("." * 50)
     choix = (input("Quel est votre choix ? : "))
     if (choix == "1"):
@@ -36,6 +38,12 @@ def main():
     elif(choix == "4"):
         clear = os.system("cls" if os.name == "nt" else "clear")
         display_all()
+        print("")
+        main()
+    elif(choix == "5"):
+        clear = os.system("cls" if os.name == "nt" else "clear")
+        mot = input("Quel mot voulez-vous modifier ? : ")
+        modification(mot)
         print("")
         main()
     elif(choix == "0"):
