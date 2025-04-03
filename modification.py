@@ -2,8 +2,7 @@ from load_data import load_dictionary
 
 def modification(mot):
     dictionary = load_dictionary()
-    term = mot.strip()  # Nettoyer les espaces autour
-    definition = dictionary.get(term)
+    term = mot.strip()  
     
     modif = input("modifier la définition: ")
         
@@ -11,8 +10,9 @@ def modification(mot):
         lines = file.readlines()
     with open("mot_dico.txt","w") as file:
         for line in lines:
-            if line.startswith(term):
-                file.write(f"{term}: {modif}\n")
+            mot = line.split(":")[0].strip()
+            if line.lower().startswith(term.lower()):
+                file.write(f"{mot}: {modif}\n")
             else:
                 file.write(line)
     print(f"Le terme '{term}' a été modifié avec succès.")
