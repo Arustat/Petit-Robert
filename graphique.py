@@ -9,7 +9,7 @@ def graphique():
         for line in lines:
             label = line.split(":")[0].strip()
             nbMot = len(line.split(":", 1)[1].strip().split())
-            print(f"labels'{label}' et nbmot '{nbMot} '")
-            
+            plt.bar(label, nbMot)
+    plt.show()
 
 graphique()
