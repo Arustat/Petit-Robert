@@ -1,14 +1,23 @@
-import json
+from load_data import load_dictionary
 
-def search(mot):
-    # Ouvrir le JSON
-    with open('mot_dico.json', mode='r', encoding='utf-8') as file:
-        data = json.load(file)
+def search_term(term):
+    """Recherche un mot dans le dictionnaire et affiche sa définition (insensible à la casse)."""
+    dictionary = load_dictionary()
 
-        # Chercher le mot
-        if mot in data:
-            return data[mot]
-        else:
-            return "Mot introuvable"
-        
-search("Cuck")
+    # Convertir toutes les clés du dictionnaire en minuscules
+    dictionary_lower = {key.lower(): value for key, value in dictionary.items()}
+
+    # Convertir le mot recherché en minuscule
+    term_lower = term.strip().lower()
+    definition = dictionary_lower.get(term_lower)
+
+    if definition:
+        print(f"{term} -> {definition}")
+    else:
+        print(f"❌ Le mot '{term}' n'est pas trouvé dans le dictionnaire.")
+
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    mot = input("Entrez un mot à rechercher : ")
+    search_term(mot)

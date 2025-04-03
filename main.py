@@ -2,9 +2,12 @@
 # Auteur: Mayssa / Antonin / Raphael
 # Date: 07/10/2020
 # Licence: GNU GPL v3
-# Fonction Ajouter un mot
+
 import os
 import re
+from search import search_term
+from read import display_all
+
 #Fonction principale
 def main():
     print("." * 50)
@@ -20,20 +23,28 @@ def main():
     print("".rjust(5) + "Affichage de tout le dictionnaire".ljust(40, "_") + "4")
     print("".rjust(5) + "Fin du programme".ljust(40, "_") + "0")
     print("." * 50)
-    choix = int(input("Quel est votre choix ? : "))
-    if (choix == 1):
+    choix = (input("Quel est votre choix ? : "))
+    if (choix == "1"):
         ajouter_mot()
-    elif(choix == 2):
+    elif(choix == "2"):
         suppression()
-    elif(choix == 3):
-        return None
-    elif(choix == 4):
-        return None
-    elif(choix == 0):
-        return "Merci d'avoir utilisé le Petit Robert de la nouvelle génération"
+    elif(choix == "3"):
+        clear = os.system("cls" if os.name == "nt" else "clear")
+        search_term(input("Quel mot voulez-vous rechercher ? : "))
+        print("")
+        main()
+    elif(choix == "4"):
+        clear = os.system("cls" if os.name == "nt" else "clear")
+        display_all()
+        print("")
+        main()
+    elif(choix == "0"):
+        print("Merci d'avoir utilisé le Petit Robert de la nouvelle génération\n0")
+        return
     else:
         print("Erreur de saisie !")
-        return main()
+        main()
+
 
 
 #Fonction Suppression d'un mot
@@ -44,12 +55,30 @@ def suppression():
 
     with open("mot_dico.txt", "r") as file:
         lines = file.readlines()
+        if not any(re.search(rf'\b{re.escape(sup_request)}\b', line) for line in lines):
+            print("Le mot n'existe pas dans le dictionnaire.")
+            rep = input("Vous voulez revenir au menu principal ? (Oui/Non) : ").strip().lower()
+            if rep in ["non", "n", "no"]:
+                
+                print("Merci d'avoir utilisé le Petit Robert de la nouvelle génération")
+                return
+            else:
+                os.system("cls" if os.name == "nt" else "clear")
+                main()
+                return
 
     with open("mot_dico.txt", "w") as file:
         for line in lines:
             # Supprimer toute la ligne si le mot exact est présent
             if not re.search(rf'\b{re.escape(sup_request)}\b', line):
                 file.write(line)
+    rep = input("Vous voulez revenir au menu principal ? (Oui/Non) : ").strip().lower()
+    if rep in ["non", "n", "no"]:
+        print("Merci d'avoir utilisé le Petit Robert de la nouvelle génération")
+        return
+    else:
+        os.system("cls" if os.name == "nt" else "clear")
+        main()
 
 
 def ajouter_mot():

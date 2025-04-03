@@ -1,15 +1,14 @@
-import 
+from load_data import load_dictionary
+
 def display_all():
+    """Affiche tous les mots du dictionnaire avec leur définition."""
+    dictionary = load_dictionary()
+    
+    print(f"{len(dictionary)} mots trouvés dans le dictionnaire\n")
+    for term, definition in dictionary.items():
+        print(f"{term} -> {definition}")
 
-    # Ouvrir le JSON
-    with open('mot_dico.json', mode='r', encoding='utf-8') as file:
-        data = json.load(file)
 
-        print(len(data), "mots trouvés dans le dictionnaire", "\n")
-
-        # Lire et afficher chaque mot et sa définition
-        for term, definition in data.items():
-            print(f"{term} -> Definition: {definition}")
-
-display_all()
-
+# Exécution du script
+if __name__ == "__main__":
+    display_all()
