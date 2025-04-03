@@ -1,26 +1,8 @@
-def load_dictionary(filename):
-    """Charge le fichier texte et retourne un dictionnaire de termes et définitions."""
-    dictionary = {}
+from load_data import load_dictionary
 
-    with open(filename, mode='r', encoding='utf-8') as file:
-        for line in file:
-            # Vérifie qu'il y a bien une séparation entre mot et définition
-            if ':' in line:
-                term, definition = line.split(':', 1)  # Séparer uniquement sur la première occurrence de ':'
-                dictionary[term.strip()] = definition.strip()  # Nettoyer les espaces
-    
-    return dictionary
-
-
-def display_all(dictionary):
-    """Affiche tous les mots du dictionnaire avec leur définition."""
-    print(f"{len(dictionary)} mots trouvés dans le dictionnaire\n")
-    for term, definition in dictionary.items():
-        print(f"{term} -> {definition}")
-
-
-def search_term(dictionary, term):
+def search_term(term):
     """Recherche un mot dans le dictionnaire et affiche sa définition."""
+    dictionary = load_dictionary()
     term = term.strip()  # Nettoyer les espaces autour
     definition = dictionary.get(term)
 
@@ -31,8 +13,6 @@ def search_term(dictionary, term):
 
 
 # Exemple d'utilisation
-filename = 'mot_dico.txt'
-dico = load_dictionary(filename)
-
-# Afficher tout le dictionnaire
-display_all(dico)
+if __name__ == "__main__":
+    mot = input("Entrez un mot à rechercher : ")
+    search_term(mot)

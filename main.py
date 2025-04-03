@@ -5,6 +5,8 @@
 # Fonction Ajouter un mot
 import os
 import re
+from search import search_term
+from read import display_all
 
 #Fonction principale
 def main():
@@ -27,9 +29,15 @@ def main():
     elif(choix == 2):
         suppression()
     elif(choix == 3):
-        return None
+        clear = os.system("cls" if os.name == "nt" else "clear")
+        search_term(input("Quel mot voulez-vous rechercher ? : "))
+        print("")
+        main()
     elif(choix == 4):
-        return None
+        clear = os.system("cls" if os.name == "nt" else "clear")
+        display_all()
+        print("")
+        main()
     elif(choix == 0):
         return "Merci d'avoir utilisé le Petit Robert de la nouvelle génération"
     else:
