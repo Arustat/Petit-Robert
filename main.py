@@ -5,7 +5,6 @@
 # Fonction Ajouter un mot
 import os
 import re
-
 #Fonction principale
 def main():
     print("." * 50)
