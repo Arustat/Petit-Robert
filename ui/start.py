@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, simpledialog
 from tkinter import ttk
 import os
+import matplotlib.pyplot as plt
 
 # Chemin absolu vers le fichier du dictionnaire
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -44,11 +45,28 @@ def trier_par_ordre_alpha():
     with open(DICTIONARY_FILE, "w", encoding="utf-8") as f:
         f.writelines(contenu)
 
+# --- Bouton "Graphique" (placeholder) ---
+def afficher_graphique():
+    nbMot = 0
+    # Lecture du fichier ligne par ligne
+    with open(DICTIONARY_FILE, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+        for line in lines:
+            label = line.split(":")[0].strip()
+            nbMot = len(line.split(":", 1)[1].strip().split())
+            plt.bar(label, nbMot)
+            plt.xticks(rotation=70)
+    plt.ylabel("Nombre de mots dans la définition")
+    plt.title("Mots du dictionnaire")
+    plt.show()
+
+
 # --- Classe principale de l'application ---
 class DictionnaireApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Dictionnaire")
+        self.root.title("Petit Robert")
+        self.root.geometry("600x600")
 
         # Variable de recherche
         self.search_var = tk.StringVar()
@@ -213,10 +231,6 @@ class DictionnaireApp:
         self.tree.delete(*self.tree.get_children())
         for mot, desc in items:
             self.tree.insert("", "end", values=(mot, desc, "🗑 Supprimer"))
-
-# --- Bouton "Graphique" (placeholder) ---
-def afficher_graphique():
-    messagebox.showinfo("Graphique", "Fonctionnalité à venir !")
 
 # --- Fonction principale ---
 def main():

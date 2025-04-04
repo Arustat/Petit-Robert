@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 def graphique():
     nbMot = 0
-    with open("mot_dico.txt","r") as file:
+    with open("mot_dico.txt","r", encoding="utf-8") as file:
         lines = file.readlines()
         for line in lines:
             label = line.split(":")[0].strip()
