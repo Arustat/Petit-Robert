@@ -1,9 +1,15 @@
-Application de Dictionnaire Petit Robert de la nouvelle génération
-Description
-C'est une application personnelle développée en Python utilisant Tkinter pour créer une interface graphique. Elle permet de rechercher des mots dans un fichier mot_dico.txt et d'afficher leurs définitions.
+Voici le README formaté pour être copié directement sur GitHub :
 
-Structure du projet
+```markdown
+# Application de Dictionnaire Petit Robert
 
+## Description
+
+C'est une application personnelle développée en Python utilisant Tkinter pour créer une interface graphique. Elle permet de rechercher des mots dans un fichier `mot_dico.txt` et d'afficher leurs définitions.
+
+## Structure du projet
+
+```
 Projet-Dico-Petit-Robert/
 │
 ├── ui/
@@ -13,16 +19,25 @@ Projet-Dico-Petit-Robert/
 │
 └── Petit-Robert/
     └── mot_dico.txt           # Liste de mots et leurs définitions
-Installation et utilisation
-Clone ou télécharge le projet.
+```
 
-Assure-toi que Python et Tkinter sont installés.
+## Installation et utilisation
 
-Lance l'application avec :
-python ui/start.py
+1. Clone ou télécharge le projet.
 
-Fonctionnalités
+2. Assure-toi que Python et Tkinter sont installés.
 
-Recherche de mots et affichage de la définition.
+3. Lance l'application avec :
 
-Interface simple et intuitive.
+   ```bash
+   python ui/start.py
+   ```
+
+## Fonctionnalités
+
+- Recherche de mots et affichage de la définition.
+- Interface simple et intuitive.
+
+```
+
+Tu peux maintenant le copier et le coller directement dans le fichier `README.md` de ton dépôt GitHub.
