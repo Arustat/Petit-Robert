@@ -12,10 +12,16 @@ root = tk.Tk()
 root.title("Petit Robert") 
 
 def resource_path(relative_path):
-    # Get absolute path to resource, works for dev and for PyInstaller .exe
-    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
+    """Cherche d'abord le fichier à la racine, sinon utilise le dossier temporaire de PyInstaller."""
+    if os.path.exists(relative_path):  
+        return os.path.abspath(relative_path)  
 
+    try:
+        base_path = sys._MEIPASS  # Quand exécuté en .exe
+    except AttributeError:
+        base_path = os.path.abspath(".")  # Mode script
+
+    return os.path.join(base_path, relative_path)
 # Centrage de la fenêtre
 width = 600
 height = 600

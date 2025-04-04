@@ -6,10 +6,24 @@ import os
 import matplotlib.pyplot as plt
 
 def resource_path(relative_path):
-    import sys, os
-    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
-    return os.path.join(base_path, relative_path)
+    """Cherche d'abord le fichier à la racine, sinon utilise le dossier temporaire de PyInstaller."""
+    if os.path.exists(relative_path):  
+        return os.path.abspath(relative_path)  
 
+    try:
+        base_path = sys._MEIPASS  # Quand exécuté en .exe
+    except AttributeError:
+        base_path = os.path.abspath(".")  # Mode script
+
+def get_mot_dico_path():
+    """Toujours utiliser le fichier `mot_dico.txt` à côté de l'exécutable."""
+    exe_dir = os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.path.abspath(".")
+    mot_dico_path = os.path.join(exe_dir, "mot_dico.txt")
+
+    if not os.path.exists(mot_dico_path):
+        raise FileNotFoundError(f"Erreur : {mot_dico_path} introuvable. Placez ce fichier dans le même dossier que l'exécutable.")
+
+    return mot_dico_path
 
 # Chemin absolu vers le fichier du dictionnaire
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -214,15 +228,15 @@ class DictionnaireApp:
     # Affiche une popup pour choisir le type de tri
     def trier_popup(self):
         options = [
-            "Mot (A → Z)",
-            "Mot (Z → A)",
-            "Description (A → Z)",
-            "Description (Z → A)"
+            "1. Mot (A → Z)",
+            "2. Mot (Z → A)",
+            "3. Description (A → Z)",
+            "4. Description (Z → A)"
         ]
         choix = simpledialog.askstring(
             "Tri", 
-            "Choisissez un type de tri :\n- Mot (A → Z)\n- Mot (Z → A)\n- Description (A → Z)\n- Description (Z → A)",
-            initialvalue=options[0]
+            "Choisissez un type de tri :\n- 1. Mot (A → Z)\n- 2. Mot (Z → A)\n- 3. Description (A → Z)\n- 4. Description (Z → A)",
+            initialvalue=1
         )
         if not choix:
             return
@@ -230,13 +244,13 @@ class DictionnaireApp:
         dictionnaire = self.charger_dictionnaire()
         items = list(dictionnaire.items())
 
-        if choix == "Mot (A → Z)":
+        if choix == "1":
             items.sort(key=lambda x: x[0].lower())
-        elif choix == "Mot (Z → A)":
+        elif choix == "2":
             items.sort(key=lambda x: x[0].lower(), reverse=True)
-        elif choix == "Description (A → Z)":
+        elif choix == "3":
             items.sort(key=lambda x: x[1].lower())
-        elif choix == "Description (Z → A)":
+        elif choix == "4":
             items.sort(key=lambda x: x[1].lower(), reverse=True)
         else:
             messagebox.showerror("Erreur", "Option de tri invalide.")
