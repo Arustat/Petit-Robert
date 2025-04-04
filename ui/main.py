@@ -1,5 +1,8 @@
 import tkinter as tk
+from tkinter import ttk
+from tracemalloc import start
 from PIL import Image, ImageTk  # Import de Pillow
+import start
 
 root = tk.Tk()
 root.title("Petit Robert") 
@@ -28,24 +31,15 @@ root.resizable(False, False)
 
 root.iconbitmap("assets/dictionary_icon.ico")
 
-start_button = tk.Button(
-    root,
-    text="Start",
-    command = main()
-)
-exit_button = tk.Button(
-    root,
-    text="Exit",
-    command = root.quit()
-)
 
-start_button = tk.Button(root, text="Start", width=20, height=2)
+def suite():
+    start.main()
+    root.destroy()
+
+start_button = tk.Button(root, text="Start", width=20, height=2,command=suite)
 start_button.place(x=230, y=500)
 
-exit_button = tk.Button(root, text="Exit", width=20, height=2)
+exit_button = tk.Button(root, text="Exit", width=20, height=2, command=root.quit)
 exit_button.place(x=230, y=550)
 
 root.mainloop()
-
-def main():
-    exit
