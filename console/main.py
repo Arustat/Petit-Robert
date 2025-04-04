@@ -4,7 +4,6 @@
 # Licence: GNU GPL v3
 
 import os
-import re
 from modification import modification
 from graphique import graphique
 from search import search_term
@@ -12,7 +11,10 @@ from read import display_all
 import suppression
 import ajouter
 import modification
+import sys
+import io
 
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def main():
     while True:  # Boucle infinie pour gérer le menu

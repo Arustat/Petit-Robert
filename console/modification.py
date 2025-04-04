@@ -32,7 +32,7 @@ def modification():
 
     try:
         # Lire le contenu du fichier avec un encodage permissif
-        with open(config.DICTIONARY_FILE, "r", encoding="ISO-8859-1") as file:
+        with open(config.DICTIONARY_FILE, "r", encoding="utf-8") as file:
             lines = file.readlines()
 
         # Vérifier si le mot existe dans le dictionnaire
@@ -47,7 +47,7 @@ def modification():
             return
 
         # Réécrire le fichier avec la modification
-        with open(config.DICTIONARY_FILE, "w", encoding="ISO-8859-1") as file:
+        with open(config.DICTIONARY_FILE, "w", encoding="utf-8") as file:
             for line in lines:
                 word = line.split(":")[0].strip()
                 if word.lower() == mot.lower():
