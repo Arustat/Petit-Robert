@@ -33,8 +33,8 @@ root.iconbitmap("assets/dictionary_icon.ico")
 
 
 def suite():
-    start.main()
     root.destroy()
+    start.main()
 
 start_button = tk.Button(root, text="Start", width=20, height=2,command=suite)
 start_button.place(x=230, y=500)
