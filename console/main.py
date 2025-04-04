@@ -9,8 +9,9 @@ from modification import modification
 from graphique import graphique
 from search import search_term
 from read import display_all
-import ajouter
 import suppression
+import ajouter
+import modification
 
 
 def main():
@@ -32,9 +33,11 @@ def main():
         choix = input("Quel est votre choix ? : ")
 
         if choix == "1":
-            ajouter.ajouter_mot()
+            os.system("cls" if os.name == "nt" else "clear")
+            ajouter.menu_ajout()
         elif choix == "2":
-            suppression.suppression()
+            os.system("cls" if os.name == "nt" else "clear")
+            suppression.menu_supp()
         elif choix == "3":
             os.system("cls" if os.name == "nt" else "clear")
             search_term(input("Quel mot voulez-vous rechercher ? : "))
@@ -45,8 +48,7 @@ def main():
             print("")
         elif choix == "5":
             os.system("cls" if os.name == "nt" else "clear")
-            mot = input("Quel mot voulez-vous modifier ? : ")
-            modification(mot)
+            modification.menu_modif()
             print("")
         elif choix == "6":
             os.system("cls" if os.name == "nt" else "clear")

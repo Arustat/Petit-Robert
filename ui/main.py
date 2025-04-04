@@ -3,9 +3,18 @@ from tkinter import ttk
 from tracemalloc import start
 from PIL import Image, ImageTk  # Import de Pillow
 import start
+import sys
+import os
+from PIL import Image
+from start import main
 
 root = tk.Tk()
 root.title("Petit Robert") 
+
+def resource_path(relative_path):
+    # Get absolute path to resource, works for dev and for PyInstaller .exe
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
 
 # Centrage de la fenêtre
 width = 600
@@ -15,7 +24,8 @@ screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
 # Redimensionnement de l'image de fond
-original_bg = Image.open('assets/bg.png')
+bg_image_path = resource_path("assets/bg.png")
+original_bg = Image.open(bg_image_path)
 resized_bg = original_bg.resize((width, height), Image.Resampling.LANCZOS)  # Redimensionne l'image
 bg = ImageTk.PhotoImage(resized_bg)
 
@@ -29,7 +39,7 @@ root.geometry(f"{width}x{height}+{x}+{y}")
 
 root.resizable(False, False)
 
-root.iconbitmap("assets/dictionary_icon.ico")
+root.iconbitmap(resource_path("assets/dictionary_icon.ico"))
 
 
 def suite():
@@ -43,3 +53,6 @@ exit_button = tk.Button(root, text="Exit", width=20, height=2, command=root.quit
 exit_button.place(x=230, y=550)
 
 root.mainloop()
+
+if __name__ == "__main__":
+    main()

@@ -1,8 +1,9 @@
 import matplotlib.pyplot as plt
+import config
 
 def graphique():
     nbMot = 0
-    with open("mot_dico.txt","r", encoding="utf-8") as file:
+    with open(config.DICTIONARY_FILE,"r", encoding="utf-8") as file:
         lines = file.readlines()
         for line in lines:
             label = line.split(":")[0].strip()

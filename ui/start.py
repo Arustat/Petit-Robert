@@ -1,12 +1,26 @@
+import sys
 import tkinter as tk
 from tkinter import messagebox, simpledialog
 from tkinter import ttk
 import os
 import matplotlib.pyplot as plt
 
+def resource_path(relative_path):
+    import sys, os
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+
+
 # Chemin absolu vers le fichier du dictionnaire
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DICTIONARY_FILE = os.path.join(BASE_DIR, "../mot_dico.txt")
+# Obtenir le dossier racine du projet (fonctionne en .py et en .exe)
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)  # exécutable
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # script Python
+
+DICTIONARY_FILE = os.path.join(BASE_DIR, "mot_dico.txt")
+
 
 # --- Fonction pour ajouter un mot au fichier dictionnaire ---
 def ajouter_mot():
@@ -247,7 +261,7 @@ def main():
 
     # Icone personnalisée (si dispo)
     try:
-        root.iconbitmap("assets/dictionary_icon.ico")
+        root.iconbitmap(resource_path("assets/dictionary_icon.ico"))
     except:
         pass  # pas grave si le fichier manque
 
