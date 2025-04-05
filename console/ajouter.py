@@ -2,6 +2,28 @@ import re
 import os
 import config
 
+
+def menu_ajout():
+    while True:  # Boucle infinie pour gérer le menu
+        print(".{}".format("".ljust(48, ".")))
+        print(".               Menu : Ajout d'un mot".ljust(49) + ".")
+        print("." * 50)
+        print("".rjust(5) + "Ajouter un mot".ljust(40, "_") + "1")
+        print("".rjust(5) + "Retourner au menu principal".ljust(40, "_") + "2")
+        print("." * 50)
+
+        choix = input("Votre choix : ")
+
+        if choix == "1":
+            os.system("cls" if os.name == "nt" else "clear")
+            ajouter_mot()  # La fonction pour ajouter un mot
+        elif choix == "2":
+            os.system("cls" if os.name == "nt" else "clear")
+            return
+        else:
+            print("Erreur : Choix invalide, veuillez réessayer.")
+
+
 def ajouter_mot():
     print("Vous voulez ajouter un mot !")
     
