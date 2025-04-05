@@ -11,10 +11,6 @@ from read import display_all
 import suppression
 import ajouter
 import modification
-import sys
-import io
-
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 def main():
     while True:  # Boucle infinie pour gérer le menu
